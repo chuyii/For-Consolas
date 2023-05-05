@@ -3,3 +3,5 @@ nerd-fonts
 NasuFont20200227
 *.ttf
 *.zip
+replaceparts_generator.py
+font-patcher-log.txt
