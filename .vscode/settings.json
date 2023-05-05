@@ -1,0 +1,16 @@
+{
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.formatting.provider": "black",
+  "editor.formatOnSave": true,
+  "python.linting.pylintEnabled": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "python.linting.flake8Args": ["--ignore=E501"],
+  "editor.tabSize": 4,
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "strict",
+  "isort.args": ["--profile=black"]
+}

@@ -1,0 +1,58 @@
+diff --git a/replaceparts_generator.py b/replaceparts_generator.py
+index 0fb77a0..b30cb98 100644
+--- a/replaceparts_generator.py
++++ b/replaceparts_generator.py
+@@ -3,10 +3,16 @@ import math
+ import fontforge
+ import psMat
+ 
+-em = 1024
+-width = 512
+-ascent = 880
+-descent = 234
++em = 2048
++width = 1126
++_ascent = 1521
++_descent = 527
++ascent = 1884
++descent = 514
++height = ascent + descent
++gap = math.ceil(height * 0.1 / 2)
++ascent += gap
++descent += gap
+ 
+ bl = 0
+ br = width
+@@ -16,9 +22,9 @@ bb = -descent
+ bt = ascent
+ bh = bt - bb
+ cy = (bb + bt) / 2.0
+-swl2 = 72 / 2.0
+-swh2 = 146 / 2.0
+-dg2 = 118 / 2.0
++swl2 = 72 / 2.0 * 2
++swh2 = 146 / 2.0 * 2
++dg2 = 118 / 2.0 * 2
+ dd = dg2 + 2 * swl2
+ 
+ xrefT = psMat.compose(psMat.translate(-2 * cx, 0), psMat.scale(-1, 1))
+@@ -59,15 +65,15 @@ font.fontname = font.familyname
+ font.fullname = font.familyname
+ font.weight = 'Regular'
+ font.em = em
+-font.ascent = ascent
+-font.descent = descent
++font.ascent = _ascent
++font.descent = _descent
+ font.os2_winascent = ascent
+ font.os2_winascent_add = 0
+ font.os2_windescent = descent
+ font.os2_windescent_add = 0
+-font.os2_typoascent = ascent
++font.os2_typoascent = _ascent
+ font.os2_typoascent_add = 0
+-font.os2_typodescent = -descent
++font.os2_typodescent = -_descent
+ font.os2_typodescent_add = 0
+ font.os2_typolinegap = 0
+ font.hhea_ascent = ascent
